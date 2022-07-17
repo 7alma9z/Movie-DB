@@ -1,5 +1,5 @@
 # Movie-DB
-The Movie DB With clean architechture
+The Movie DB API implementation With clean architechture
 
 <div align="center">
   <sub>Built with ❤︎ by
