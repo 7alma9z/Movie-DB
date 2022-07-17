@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:id="@+id/coordinator"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="@dimen/_32sdp"
+            app:behavior_hideable="true"
+            app:behavior_peekHeight="@dimen/_32sdp"
+
+            >
+
+            <androidx.constraintlayout.widget.Group
+                android:id="@+id/contentGroup"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                app:constraint_referenced_ids="iv_poster,title,chipScroller,description"
+                tools:visibility="visible" />
+
+            <ProgressBar
+                android:id="@+id/progress"
+                android:layout_width="@dimen/_20sdp"
+                android:layout_height="@dimen/_20sdp"
+                android:layout_margin="@dimen/_12sdp"
+                android:layout_marginStart="@dimen/_5sdp"
+                android:indeterminate="true"
+                android:visibility="gone"
+                app:indicatorColor="?attr/colorPrimary"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:trackColor="?attr/colorSecondary"
+                tools:visibility="visible" />
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/iv_poster"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:background="@color/grey"
+                android:scaleType="centerCrop"
+
+                android:visibility="visible"
+                app:layout_constraintDimensionRatio="H,3:2"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/progress" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ic_play"
+                android:layout_width="@dimen/_40sdp"
+                android:layout_height="@dimen/_40sdp"
+                android:src="@drawable/ic_baseline_play_circle_outline_24"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="@+id/iv_poster"
+                app:layout_constraintEnd_toEndOf="@+id/iv_poster"
+                app:layout_constraintStart_toStartOf="@+id/iv_poster"
+                app:layout_constraintTop_toTopOf="@+id/iv_poster"
+                tools:visibility="visible" />
+
+            <TextView
+                android:id="@+id/title"
+                style="@style/title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/_12sdp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/iv_poster"
+                tools:text="@string/app_name" />
+
+            <HorizontalScrollView
+                android:id="@+id/chipScroller"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:paddingHorizontal="@dimen/_12sdp"
+                android:scrollbars="none"
+                app:layout_constraintTop_toBottomOf="@+id/title">
+
+                <com.google.android.material.chip.ChipGroup
+                    android:id="@+id/genres"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:singleLine="true" />
+            </HorizontalScrollView>
+
+            <TextView
+                android:id="@+id/description"
+                style="@style/description"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/_12sdp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/chipScroller"
+                tools:text="@string/app_name" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+</layout>
