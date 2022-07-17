@@ -1,12 +1,6 @@
 # Movie-DB
 The Movie DB API implementation With clean architechture
 
-<div align="center">
-  <sub>Built with ❤︎ by
-  <a>Muhammad Salman Aziz</a>
-</div>
-<br/>
-
 ## Features
 * Home Screen showing list of Categories and movies.
 * Detail Screen to show more information about a Movie.
