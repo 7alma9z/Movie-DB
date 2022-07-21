@@ -20,7 +20,7 @@ jobs:
         - name: Run Lint
           uses: gradle/gradle-build-action@v2.2.2
           with:
-                arguments: listDebug
+                arguments: lintDebug
 
 
         - name: Upload test report
