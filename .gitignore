@@ -12,7 +12,12 @@
 /build/*
 /app/*.apk
 /captures
-/app/build/
+/app/build/generated
+/app/build/intermediates
+/app/build/kotlin
+/app/build/kotlinToolingMetadata
+/app/build/tmp
+/app/build/snapshot
 /core/build/
 /.idea/
 /.idea/caches/
