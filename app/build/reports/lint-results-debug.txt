@@ -1,0 +1,72 @@
+/Users/salmanaziz/Desktop/Desktop/Android/Tmdb repo/Movie-DB/app/src/main/java/com/salman/tmdb/extensions/ViewExtensions.kt:28: Warning: The result of thumbnail is not used [CheckResult]
+    if (placeholder != null) glideRequest.thumbnail(
+                             ^
+
+   Explanation for issues of type "CheckResult":
+   Some methods have no side effects, and calling them without doing something
+   without the result is suspicious.
+
+/Users/salmanaziz/Desktop/Desktop/Android/Tmdb repo/Movie-DB/app/build.gradle:54: Warning: A newer version of androidx.databinding:databinding-runtime than 4.2.2 is available: 7.2.1 [GradleDependency]
+    implementation 'androidx.databinding:databinding-runtime:4.2.2'
+                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+   Explanation for issues of type "GradleDependency":
+   This detector looks for usages of libraries where the version you are using
+   is not the current stable release. Using older versions is fine, and there
+   are cases where you deliberately want to stick with an older version.
+   However, you may simply not be aware that a more recent version is
+   available, and that is what this lint check helps find.
+
+/Users/salmanaziz/Desktop/Desktop/Android/Tmdb repo/Movie-DB/app/src/main/res/layout/activity_main.xml:8: Warning: Possible overdraw: Root element paints background @color/grey with a theme that also paints a background (inferred theme is @style/Theme.Tmdb) [Overdraw]
+    android:background="@color/grey"
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+   Explanation for issues of type "Overdraw":
+   If you set a background drawable on a root view, then you should use a
+   custom theme where the theme background is null. Otherwise, the theme
+   background will be painted first, only to have your custom background
+   completely cover it; this is called "overdraw".
+
+   NOTE: This detector relies on figuring out which layouts are associated
+   with which activities based on scanning the Java code, and it's currently
+   doing that using an inexact pattern matching algorithm. Therefore, it can
+   incorrectly conclude which activity the layout is associated with and then
+   wrongly complain that a background-theme is hidden.
+
+   If you want your custom background on multiple pages, then you should
+   consider making a custom theme with your custom background and just using
+   that theme instead of a root element background.
+
+   Of course it's possible that your custom drawable is translucent and you
+   want it to be mixed with the background. However, you will get better
+   performance if you pre-mix the background with your drawable and use that
+   resulting image or color as a custom theme background instead.
+
+/Users/salmanaziz/Desktop/Desktop/Android/Tmdb repo/Movie-DB/app/src/main/res/values/strings.xml:4: Warning: The resource R.string.hello_blank_fragment appears to be unused [UnusedResources]
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+   Explanation for issues of type "UnusedResources":
+   Unused resources make applications larger and slow down builds.
+
+   The unused resource check can ignore tests. If you want to include
+   resources that are only referenced from tests, consider packaging them in a
+   test source set instead.
+
+   You can include test sources in the unused resource check by setting the
+   system property lint.unused-resources.include-tests=true, and to exclude
+   them (usually for performance reasons), use
+   lint.unused-resources.exclude-tests=true.
+
+/Users/salmanaziz/Desktop/Desktop/Android/Tmdb repo/Movie-DB/app/src/main/res/drawable/image_place_holder.jpeg: Warning: Found bitmap drawable res/drawable/image_place_holder.jpeg in densityless folder [IconLocation]
+
+   Explanation for issues of type "IconLocation":
+   The res/drawable folder is intended for density-independent graphics such
+   as shapes defined in XML. For bitmaps, move it to drawable-mdpi and
+   consider providing higher and lower resolution versions in drawable-ldpi,
+   drawable-hdpi and drawable-xhdpi. If the icon really is density independent
+   (for example a solid color) you can place it in drawable-nodpi.
+
+   https://developer.android.com/guide/practices/screens_support.html
+
+0 errors, 5 warnings

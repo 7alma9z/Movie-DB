@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.salman.tmdb.ui.details.MovieDetailsViewModelTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2022-07-21T16:37:42" hostname="salmans.local" time="1.111">
+  <properties/>
+  <testcase name="fetchData() should invoke movie live data successfully" classname="com.salman.tmdb.ui.details.MovieDetailsViewModelTest" time="1.111"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
