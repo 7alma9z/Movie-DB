@@ -4,7 +4,7 @@ name: CI
       branches: [main]
     pul_requests:
       branches: [main]
-
+  workflow_dispatch:
 
   jobs:
     lint:
