@@ -3,8 +3,7 @@ package com.salman.tmdb.ui
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.content.res.AppCompatResources
-import androidx.databinding.DataBindingUtil
-import androidx.fragment.app.*
+ import androidx.fragment.app.*
 import com.salman.remote.DataState
 import com.salman.tmdb.R
 import com.salman.tmdb.databinding.ActivityMainBinding
@@ -52,11 +51,9 @@ class MoviesListingActivity : AppCompatActivity(), DataCallBack {
                 )
             }
         }
+        binding = ActivityMainBinding.inflate(layoutInflater)
 
-        DataBindingUtil.setContentView<ActivityMainBinding>(this, R.layout.activity_main).apply {
-            binding = this
-
-        }
+        setContentView(binding.root)
 
     }
 

@@ -21,7 +21,7 @@ created on 7/15/22
       var onCheckedChangeListener: OnCheckedChangeListener? =null
 
 
-    open fun setChecked(attrs: AttributeSet) {
+      fun setChecked(attrs: AttributeSet) {
         val a: TypedArray = getContext().obtainStyledAttributes(attrs, R.styleable.ToggleImageButton)
      isChecked = a.getBoolean(R.styleable.ToggleImageButton_android_checked, false)
         a.recycle()

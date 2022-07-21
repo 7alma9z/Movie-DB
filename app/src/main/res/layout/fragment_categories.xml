@@ -1,71 +1,66 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:android="http://schemas.android.com/apk/res/android"
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context=".ui.listingfragment.LatestMoviesFragment"
+    android:layout_width="match_parent"
 
-    tools:ignore="ExtraText">
+    android:layout_height="wrap_content"
+    android:clipChildren="false"
+    android:clipToPadding="false"
+    app:cardCornerRadius="@dimen/_10sdp"
+    app:contentPadding="@dimen/_10sdp"
+     tools:ignore="ExtraText">
 
-
-    <com.google.android.material.card.MaterialCardView
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:clipChildren="false"
-        android:clipToPadding="false"
-        app:cardCornerRadius="@dimen/_10sdp"
-        app:contentPadding="@dimen/_10sdp">
 
-        <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/title"
+            style="@style/labelStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="@string/app_name" />
+
+        <com.salman.tmdb.utils.ToggleImageButton
+            android:id="@+id/btn_enabler"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/expand_indicator"
+            android:checked="false"
+            android:clickable="true"
+            android:focusable="true"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_movies"
             android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingVertical="@dimen/_10sdp"
+            android:visibility="gone"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintTop_toBottomOf="@+id/btn_enabler"
+            tools:listitem="@layout/item_movie" />
 
-            android:layout_height="wrap_content">
+        <ProgressBar
+            android:id="@+id/progress"
+            android:layout_width="@dimen/_20sdp"
+            android:layout_height="@dimen/_20sdp"
+            android:layout_marginStart="@dimen/_5sdp"
+            android:indeterminate="true"
+            android:visibility="gone"
+            app:indicatorColor="?attr/colorPrimary"
+            app:layout_constraintBottom_toBottomOf="@+id/title"
+            app:layout_constraintStart_toEndOf="@+id/title"
+            app:layout_constraintTop_toTopOf="@+id/title"
+            app:trackColor="?attr/colorSecondary"
+            tools:visibility="visible" />
 
-            <TextView
-                android:id="@+id/title"
-                style="@style/labelStyle"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                tools:text="@string/app_name" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
-            <com.salman.tmdb.utils.ToggleImageButton
-                android:id="@+id/btn_enabler"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@drawable/expand_indicator"
-                android:checked="false"
-                android:clickable="true"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                android:focusable="true" />
-
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/rv_movies"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:paddingVertical="@dimen/_10sdp"
-                android:visibility="gone"
-                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-                app:layout_constraintTop_toBottomOf="@+id/btn_enabler"
-                tools:listitem="@layout/item_movie" />
-
-            <ProgressBar
-                android:id="@+id/progress"
-                android:layout_width="@dimen/_20sdp"
-                android:layout_height="@dimen/_20sdp"
-                android:layout_marginStart="@dimen/_5sdp"
-                android:indeterminate="true"
-                android:visibility="gone"
-                tools:visibility="visible"
-                app:indicatorColor="?attr/colorPrimary"
-                app:layout_constraintBottom_toBottomOf="@+id/title"
-                app:layout_constraintStart_toEndOf="@+id/title"
-                app:layout_constraintTop_toTopOf="@+id/title"
-                app:trackColor="?attr/colorSecondary" />
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
-
-    </com.google.android.material.card.MaterialCardView>
-</layout>
+</com.google.android.material.card.MaterialCardView>

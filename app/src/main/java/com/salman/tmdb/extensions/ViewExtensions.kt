@@ -50,7 +50,7 @@ fun View.showSnackBar(  message: String) {
         .setActionTextColor(ContextCompat.getColor(this.context, R.color.white)).also {
             it.setAction(
                 "OK"
-            ) { v ->
+            ) { _ ->
                 it.dismiss()
             }
         }
