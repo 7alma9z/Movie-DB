@@ -1,14 +1,15 @@
 name: CI
 
-  on:
-  
-    push:
-      branches: ["main"]
-    pull_requests:
-      branches: ["main"]
+on:
+
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
   workflow_dispatch:
 
-  jobs:
+jobs:
     lint:
       runs-on: ubuntu-latest
       steps:
@@ -16,7 +17,10 @@ name: CI
           uses: actions/checkout@v2
 
         - name: Run Lint
-          uses: .gradlew/lintDebug
+          uses: gradle/gradle-build-action@v2.2.2
+          with:
+                arguments: listDebug
+
 
         - name: Upload test report
           uses: actions/upload-artifacts@v2
