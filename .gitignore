@@ -6,7 +6,6 @@
 /.idea/*
 .DS_Store
 /core/build/*
-/app/build/*
 /core/release/*
 /app/release/*
 /build/*
