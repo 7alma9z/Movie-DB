@@ -27,7 +27,7 @@ jobs:
         uses: actions/upload-artifact@v3.1.0
         with:
           name: index.html
-          path: app/build/reports/lint-result-debug.html
+          path: app/build/reports/lint-results-debug.html
 
   unit-test:
     needs: [lint]
@@ -38,6 +38,11 @@ jobs:
 
       - name: Run tests
         uses: gradle/gradle-build-action@v2.2.2
+        with:
+          arguments: test
+          
+      - name: Upload test report
+        uses: actions/upload-artifact@v3.1.0
         with:
           name: unit_test_report
           path: app/build/reports/tests/testDebugUnitTest/
@@ -52,3 +57,9 @@ jobs:
 
       - name: AppBrickie
         uses: DarthBenro008/app-brickie@v3.1
+        
+      - name: Upload APK
+        uses: actions/upload-artifact@v3.1.0
+        with:
+          name: tmdb.apk
+          path: app/build/outputs/apk/debug/app-debug.apk
